@@ -1,0 +1,34 @@
+Just some random stuff...
+
+let only within scope
+IIFE - immediately invoked function expression
+statusCode
+JSX - JS CODE - {}
+export default SomethingToExport
+json loader - entry in loaders webpack.config.js loaders array
+
+class Whatever extends ReactComponent
+
+babel-node loadTestData.js
+
+#
+
+Topics
+    JS
+    Setup
+    Node Web
+    Node API
+    React
+        mem
+        api
+    Server Render First
+        SEO
+    Frontend routing
+    backend routing
+    mongodb
+
+Front End
+    Pure React
+        no redux, no react router
+
+    

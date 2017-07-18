@@ -1,0 +1,113 @@
+ES2015
+
+Block Scopes
+    function scope
+        var means CANNOT be accessed outside
+    block scope
+        var CAN be accessed outside
+
+    for loop index....
+
+    solution:
+        use let
+        for(let i=0; i<10; i++)
+
+
+var = kinda scope
+let = scope
+const = cannot be changed
+    for object
+    object.freeze... const will not let you change object, but can change props
+
+    good for functions!
+
+ARROW FUNCTIONS
+
+const square = function(a){
+    return a*a
+}
+
+const square = (a) => a*a;
+
+(good for map reduce filter callbacks    )
+
+########"lexically scoped"##########
+
+exports.i = 'stuff'
+console.log(this);
+
+let util = {
+
+    f1:function(){
+        console.log(this);
+    },
+
+    f2: () => {
+        console.log(this);
+    }
+
+}
+
+util.f1(); // {f1:[Function:f1],f2:[Function:f2]}
+util.f2(): //{i:'stuff'}
+
+///////////////////////////////
+
+
+const X={
+    PI:PI
+    sum:sum,
+    square:square,
+}
+
+
+const X={
+    PI,
+    sum,
+    square
+}
+
+const { square } = X;
+
+const { PI, sum, square } = X;
+
+const {Component } = require('react');
+
+
+///////////destructure///////////
+
+const toDecimal ({base = 2,number}) => {
+    return parseInt(number,base);
+
+}
+
+console.log(
+    toDecimal({number:203})
+);
+
+const toDecimal = (base, ...numbers) => {
+    console.log(numbers):
+    console.log([0,...numbers]);
+    return numbers.map(number => parseInt(number,base));
+}
+
+console.log(
+    toDecima;(2,101,111,101)
+);
+
+
+
+////////////import export////////////////
+
+import fs from 'fs';
+import React, {Component} from 'react';
+
+class Footer extends Component{
+    constructor(props){
+        super(props);
+    }
+
+}
+
+
+#

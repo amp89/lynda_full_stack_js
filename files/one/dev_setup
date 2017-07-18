@@ -1,0 +1,74 @@
+node
+    web server
+    react component (front /back)
+    api server
+
+github: jscomplete/learn-fullstack-javascript
+    v1.2 .... setup
+
+STEPS:
+npm init
+
+DEPENDENCIES:
+
+npm install --save express
+npm i -S mongodb
+npm -i -S react react-dom
+#THAT"S IT FOR NOW
+
+#DEV
+npm i --save-dev webpack
+npm i -D babel-cli babel-loader babel-preset-es2015 babel-preset-stage-2 babel-preset-react
+
+
+
+###############################
+--save writes to package.json
+i think -dev does not
+###############################
+
+npm restart?
+
+npm i -D eslint eslint-plugin-react babel-eslint (idk what this is)
+
+fyi:
+@3.3.3
+npm install// installs package.json stuff cool wow
+
+
+
+mkdir src
+    index.js
+mkdir public
+    index.html
+mkdir api
+    index.js
+
+
+index is usually starting point
+
+package.json
+    scripts:
+        start
+            //node server.js
+            "nodemon --exec babel-node server.js --ignore public/""
+            "dev":"webpack -wd" //watch and development
+
+webpack.config.js
+    entry:'./src/index.js'
+    output: {
+        __dirname+'/public'
+        filename:'bundle.js'
+    }
+    module{loaders[
+        test/\.js$/,
+        loader:'babel_loader'
+    ]}
+
+.babelrc
+    {
+        presets: ['react','es2015','stage-2']
+    }
+
+.eslintrc.js
+    check repo,  much confusing

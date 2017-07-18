@@ -1,0 +1,29 @@
+{
+  "name": "fulljs",
+  "version": "1.0.0",
+  "description": "mern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'err no test spec\\'d && exit 1'"
+  },
+  "author": "hi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "i": "^0.3.5",
+    "mongodb": "^2.2.30",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint-plugin-react": "^7.1.0",
+    "eslit": "^4.1.1",
+    "webpack": "^3.3.0"
+  }
+}
