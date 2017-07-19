@@ -1,0 +1,60 @@
+do this in server.js:
+
+import http from 'http'
+import https from 'https'
+
+core modules, don't need to be installed
+
+https.get("https://www.lynda.com", res => {
+    console.log(res.statusCode);
+
+    res.on('data',chunk = > {
+        console.log(chunk.toString());
+    });//every event has "chunk" buffer thing, toString() to read
+
+});
+
+
+test:
+    babel-node server.js | less
+
+/////////////use as server
+
+import http from 'http';
+
+const server = http.createServer();
+
+server.listen(8080);
+
+server.on('request,(req,res) => {
+
+    res.write("hello friend.");
+
+    setTimeout( () => {
+        res.write("Streaming http response");
+        res.end(); //terminate response
+    }, 3000)
+
+
+})
+
+
+//babel-node server.js
+
+///////////////////////////
+
+or do it like this:
+
+const server = http.createServer((req,res) => {
+    res.write("hello http");
+    setTimeout(() => {
+        res.write("streaming http res")
+        res.end();
+    },3000)
+
+});
+
+server.listen(8080);
+
+
+/////////////////////////////////
