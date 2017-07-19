@@ -4,7 +4,8 @@
   "description": "mern",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'err no test spec\\'d && exit 1'"
+    "test": "echo 'err no test spec\\'d && exit 1'",
+    "dev": "webpack -wd"
   },
   "author": "hi",
   "license": "ISC",

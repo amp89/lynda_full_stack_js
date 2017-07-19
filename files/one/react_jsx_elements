@@ -1,0 +1,43 @@
+Virtual DOM
+
+src index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+    React.createElement(...),
+    document.getElementById("root")
+);
+
+views, index.js
+
+<div id="root"> <%- content -%> </div>
+
+init content, then root when it loads
+
+
+React.createElement(
+        "h2",
+        null,
+        'hello friend'//children
+    )
+
+npm run dev
+    creates bundle.js under public
+        need to include in html whatever thing
+        <script src="/bundle.js"></script>
+
+
+//////////jsx///////////
+
+ReactDOM.readner(<h2>Hello w/ jsx, random nubmer {Math.random();}</h2>,document.getElementById("root"));
+
+
+
+///at top:
+const color = Math.random() > 0.5 ? green : red;
+
+<h2 style={{color:color}} //object within raw js
+
+
+instead of class, className
