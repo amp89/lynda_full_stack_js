@@ -8,8 +8,15 @@ const server = express();
 
 import config from './config';
 
+server.set('view engine','ejs');
+server.set("views", path.join(__dirname,'views'));//COOL
+
 server.get("/",(req,res) => {
     res.send("hello friend");
+});
+
+server.get("/ejs",(req,res)=>{
+    res.render('index');//res.render('index',{content:'wow some content rendered right in my template! <hr> how neat!'});
 });
 
 /*

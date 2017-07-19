@@ -1,0 +1,48 @@
+EJS - embedded java script
+
+npm i -S ejs
+
+
+server.set('view engine','ejs');
+
+will look for templates in index.ejs
+
+regulear html file, but ejs
+
+<%= %> //escapes html
+<% does not escape %>
+
+
+server get / render index
+
+content: "lsdjflsdjfsdflj"
+
+res.render('index',{
+    content:'hi i'm some content'
+
+})
+
+<%= content %> content
+
+if you wanna include some html, do <%  %>.  no "=" there
+
+just a basic templating engine......
+
+
+/////////ejs files//////////
+
+
+<%- include('someotherejsfile') -%>
+
+Alternatives to ejs that suck less:
+    koa
+    hapi
+    sails
+    pug
+    handlebars
+
+
+
+
+
+.

@@ -9,6 +9,7 @@
   "author": "hi",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.15.3",
     "i": "^0.3.5",
     "mongodb": "^2.2.30",
