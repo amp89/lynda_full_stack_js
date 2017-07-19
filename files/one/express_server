@@ -1,0 +1,62 @@
+import express from 'express';
+
+const server = express();
+
+//default export in express package is function
+
+import config from './config';
+
+server.get("/", (req,res) => {
+    res.send("hello friend");
+});
+
+server.get("/about", (req,res) => {
+    res.send("about pg....")
+})
+
+server.listen(config.port, () => {
+
+    console.info("Listening on port ",config.port);
+
+});
+
+
+///////////// make about.html, put some html in there (!DOCTYPE html)
+in server.js...... import fs from 'fs';
+in the about callback
+    fs.readFile('./about.html', (err,data) => {  res.send(data.toString()); });
+
+//// static middleware!
+
+server.use(express.static('public'));  //public is dir.  will look ./public/about.html for /about.html
+
+
+//nginx would be better for this in prod
+
+//can put own routes in own module
+
+./api/index.js
+    import express from 'express';
+    const router = express.Router();
+
+    router.get('/',(req,res) => {
+        res.send({data:[]}); //json response
+
+    });
+
+    export default router;
+
+    //in .server.js
+    import apiRouter from ./api
+
+    server.use('/api',apiRouter);
+
+//use is for middleware and stuff
+
+
+
+
+
+
+
+.

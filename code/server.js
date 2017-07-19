@@ -1,41 +1,39 @@
-/*
-import http from 'http'
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import apiRouter from './api';
 
-http.get("http://www.alexmpeterson.com", res => {
-    console.log(res.statusCode);
-    res.on('data',chunk => {
-        console.log(chunk.toString());
+const server = express();
+
+
+import config from './config';
+
+server.get("/",(req,res) => {
+    res.send("hello friend");
+});
+
+/*
+server.get("/about",(req,res) => {
+    //res.send("about pg");
+    //fs.readFile('/Users/alex/full_stack_js/code/about.html', (err,data) => {//works
+    const about_path = path.join(__dirname,"public/about.html");
+    fs.readFile(about_path, (err,data) => {
+
+        res.send(data.toString());
+        res.end();
     });
 
-} );
-*/
-
-import http from 'http';
-
-
-/*
-const server = http.createServer();
-
-server.listen(8080);
-
-server.on('request',(req,res) => {
-        res.write('hello!!!\n\n');
-        setTimeout(()=>{
-            res.write('\n\ngooodbye!\n\n')
-            res.end();
-        },3000)
-
 });
 */
+//static middleware
+const public_dir = path.join(__dirname,"public");
+server.use(express.static(public_dir));
 
-const server = http.createServer((req,res) => {
+////add api ////////////////////////////
 
-    res.write("hi\n\n\n");
-    setTimeout(()=>{
-        res.write("byeeeee\n\n\n");
-        res.end();
-    },2000);
+server.use("/api",apiRouter);
 
+
+server.listen(config.port, ()=>{
+    console.info("Listening on port: ",config.port);
 });
-
-server.listen(8080);
