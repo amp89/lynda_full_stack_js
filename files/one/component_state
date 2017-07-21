@@ -1,0 +1,32 @@
+no state:
+
+const FunctionComponenet = () => {return ( <JSX STUFF> )}
+
+
+
+lets make header dynamic
+
+
+class App extends React.Component {
+
+    state = {
+        pageHeader: "uhhhh headuuurrrrrrrrr uhhhhh"
+    };
+
+    render() {
+        return (
+        <div className="App">
+            header message={this.state.pageHeader}
+            <div> this.state.test
+        </div>
+
+        )
+    }
+
+}
+
+///////////////////////////////////
+
+$r in reactdevtools
+
+$r.setState{pageHeader:'whatever'};
