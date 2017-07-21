@@ -28,6 +28,18 @@ class App extends React.Component {
         pageHeader: "uhhhh headdddduuuuuuuuurrrrrrr"
     };
 
+    componentDidMount(){
+        console.log("App did mount");
+        debugger;
+    };
+
+    componentWillUnmount(){
+        console.log("App will unmount");
+        debugger;
+    }
+
+
+
     render() {
         return (
             <div className="App">

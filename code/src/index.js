@@ -14,3 +14,10 @@ ReactDOM.render(
     <App headerMessage="Hello Property..jhgkjg.." />,
     document.getElementById("root")
 );
+
+setTimeout(()=>{
+    ReactDOM.render(
+        <h2>BYE</h2>,
+        document.getElementById("root")
+    )
+})

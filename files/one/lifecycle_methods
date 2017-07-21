@@ -1,0 +1,24 @@
+lifcycle methods
+
+
+componenetDidMount(){
+    log;
+    debugger; //literally debugger;
+}
+
+componenentWillUnount(){
+    log;
+    debugger;
+}
+
+
+//////////////index.js
+
+
+setTimeout(()=>{
+    reactDom.render(
+        <h2>BYE</h2>
+        document.getElementById("root");
+    )
+
+},4000)
