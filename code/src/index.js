@@ -7,9 +7,32 @@ ReactDOM.render(
 );
 */
 
-const color = Math.random() > 0.5 ? 'green' : 'red';
+const Header = ({message}) => {
+    return (
+        <h2 className="text-center">
+            {message}
+        </h2>
+    )
+}
+
+const App = (props) => {
+
+    return (
+        <div>
+            <Header message={props.headerMessage} />
+            <div>.......</div>
+        </div>
+
+    );
+
+};
+
+
+App.proptypes = {
+    headerMessage: React.PropTypes.string.isRequired
+};
 
 ReactDOM.render(
-    <h2 style={{color:color}}>I am a react element.  I am either red or green... right now i am {color}</h2>,
+    <App headerMessage="Hello Property...." />,
     document.getElementById("root")
-);
+)

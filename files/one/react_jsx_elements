@@ -27,7 +27,7 @@ npm run dev
         need to include in html whatever thing
         <script src="/bundle.js"></script>
 
-
+wh4
 //////////jsx///////////
 
 ReactDOM.readner(<h2>Hello w/ jsx, random nubmer {Math.random();}</h2>,document.getElementById("root"));

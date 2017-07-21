@@ -1,0 +1,54 @@
+
+
+
+const App = (props) => {
+
+    return (
+        <h2 className="text-center">
+        {pros.headerMessage}
+        </h2>
+    );
+
+};
+
+App.propTypes = {
+    headerMessage: React.PropTypes.string.isRequired
+
+};
+
+ReactDom.render(
+    <App headerMessage = "Hello Prop!" />,
+    document.getElementById("root")
+);
+
+npm run dev and e./node_modules/.bin/babel-node ./server.js
+
+
+////composability
+
+a component must return one element.  can have children, but can't be two separates
+
+can put other components in components
+
+
+
+eg:
+
+const Header = ({message}) => {
+    return (
+        <h2 className = "text-center">
+            {message}
+        </h2>
+    )
+}
+
+const App = (props) => {
+    return (
+        <div className ="App">
+            <Header message={props.headerMessage} />
+            <div>
+            </div>
+        </div>
+    )
+
+}
