@@ -2,7 +2,7 @@ import React from "react"
 
 import Header from './Header'
 
-
+/*
 const App = (props) => {
 
     return (
@@ -19,6 +19,27 @@ const App = (props) => {
 App.proptypes = {
     headerMessage: React.PropTypes.string.isRequired
 };
+*/
+
+
+class App extends React.Component {
+
+    state = {
+        pageHeader: "uhhhh headdddduuuuuuuuurrrrrrr"
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <Header message={this.state.pageHeader} />
+                <div>{this.state.test}</div>
+            </div>
+        )
+    };
+
+};
+
+
 
 
 export default App;
