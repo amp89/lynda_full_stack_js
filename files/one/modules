@@ -1,0 +1,27 @@
+components/Header.js
+
+move header into Header.js
+
+//////////////
+
+import React from 'react';
+
+Header.propTypes = {message = React.propTypes.string.isRequired}
+
+export default Header;
+
+
+///////////index.js
+
+import Header from './components/Header';
+
+
+put app somewhere else too
+    components/App.js
+
+    import React from 'react';
+    import Header from './Header'
+
+    export default App;
+
+in index.js import App
