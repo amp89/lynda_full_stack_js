@@ -1,0 +1,25 @@
+{
+
+    "contests":[
+        {
+            "id":1,
+            "categoryName":"Cats",
+            "contestName":"MeeeOOOWW"
+        },
+        {
+            "id":2,
+            "categoryName":"Dogs",
+            "contestName":"WOOOooOooooF"
+        },
+        {
+            "id":3,
+            "categoryName":"Birds",
+            "contestName":"TweeeEEttTT"
+        },
+        {
+            "id":4,
+            "categoryName":"Bunnies",
+            "contestName":"...i don't know."
+        }
+    ]
+}

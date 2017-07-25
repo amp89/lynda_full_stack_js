@@ -1,0 +1,40 @@
+npm -i -S json-loader
+
+
+
+webpack.config.js
+
+    loaders
+        test:/.json$/
+        loader: 'json-loader'
+
+
+
+index.js
+
+import data from './testData'
+
+in src
+testData.json
+
+log it
+
+pass to app
+    contests=data.contests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

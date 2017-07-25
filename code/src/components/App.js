@@ -30,12 +30,12 @@ class App extends React.Component {
 
     componentDidMount(){
         console.log("App did mount");
-        debugger;
+        //debugger;
     };
 
     componentWillUnmount(){
         console.log("App will unmount");
-        debugger;
+        //debugger;
     }
 
 
