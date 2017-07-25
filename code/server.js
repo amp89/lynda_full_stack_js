@@ -2,6 +2,7 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import apiRouter from './api';
+import sassMiddleware from 'node-sass-middleware'
 
 const server = express();
 
@@ -40,6 +41,10 @@ server.use(express.static(public_dir));
 
 server.use("/api",apiRouter);
 
+server.use(sassMiddleware({
+    src: path.join(__dirname,"sass"),
+    dest: path.join(__dirname,"public")
+}));
 
 server.listen(config.port, ()=>{
     console.info("Listening on port: ",config.port);

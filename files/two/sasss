@@ -1,0 +1,27 @@
+nesting!!!!!!
+
+
+node-sass-middleware
+
+npm -i -S node-sass-middleware
+
+
+server.js
+
+import sassMiddleware from 'node sass middleware'
+
+server.use(sassMiddleware({
+    src: sass
+    dest: public
+}))
+
+
+header ejs, include stylesheet
+
+hot reload
+
+
+
+path.join(__dirname,"sass/style.scss")
+
+!!!!!!!!!not working!!!!!!!!!!!!!!!!
