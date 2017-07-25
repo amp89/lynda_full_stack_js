@@ -1,0 +1,34 @@
+<ContestPreivew key={contest.id} {...contest} />
+
+shouldn't not use arr index
+
+///App contests = {[]} //NO DATA TIL API CALL
+
+PUT ON STATE
+
+state contests: []
+
+
+
+this.state.contests instead of this.props.contests
+
+import data from ./testData
+
+//where to modify?
+
+componentDidMount(){
+    this.setState({
+        contests: data.contests
+    });
+}
+
+
+$r.setState({contests: $r.state.contests.slice(1) }) //delete first element to test
+
+
+
+
+
+
+
+#
