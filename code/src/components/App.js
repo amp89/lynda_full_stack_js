@@ -5,6 +5,8 @@ import ContestPreview from './ContestPreview';
 
 import data from '../testData.json';
 
+import axios from 'axios';
+
 /*
 const App = (props) => {
 
@@ -35,9 +37,23 @@ class App extends React.Component {
     componentDidMount(){
         console.log("App did mount");
         //debugger;
+        axios.get('/api/contests').then(
+            response => {
+                console.log(response.data.contests);
+                this.setState({
+                    contests:response.data.contests
+                });
+            }
+
+
+        ).error(console.error(data))
+
+
+        /*
         this.setState({
             contests: data.contests
         });
+        */
     };
 
     componentWillUnmount(){
