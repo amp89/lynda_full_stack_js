@@ -1,0 +1,26 @@
+create ContestPreview component
+
+
+const ContestPrieve = (contest) => (
+    <div className = "ContestPreview">
+        <div>
+            {contest.categoryName}
+        </div>
+        <div>
+            {contest.contestName}
+        </div>
+
+    </div>
+
+)
+
+
+//App.js , import contest preview
+
+//under header, make ContestPReview
+
+///nooo <ContestPreview {...this.props.contests[0]}
+
+<div>
+    {this.props.contests.map(contest => <ContestPreivew {...contest})/>
+</div>
