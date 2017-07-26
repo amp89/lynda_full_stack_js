@@ -9,6 +9,8 @@ const server = express();
 
 import config from './config';
 
+
+
 server.set('view engine','ejs');
 server.set("views", path.join(__dirname,'views'));//COOL
 
@@ -39,6 +41,8 @@ server.use(express.static(public_dir));
 
 ////add api ////////////////////////////
 
+import './serverRender'
+
 server.use("/api",apiRouter);
 
 server.use(sassMiddleware({
@@ -46,6 +50,6 @@ server.use(sassMiddleware({
     dest: path.join(__dirname,"public")
 }));
 
-server.listen(config.port, ()=>{
+server.listen(config.port, config.host, ()=>{
     console.info("Listening on port: ",config.port);
 });

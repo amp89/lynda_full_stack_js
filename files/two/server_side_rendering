@@ -1,0 +1,33 @@
+using all ajax is bad for seo
+
+pre-render server.get("/".... stuff) to pre-load
+
+we want server to get stuff from api
+
+make serverRender.js (same level as server.js)
+
+import aixios
+
+axios.get("....api url....").then()
+
+go to config.js
+
+    host: env.HOST || '0.0.0.0',
+
+    get serverUrl(){
+        return 'http://${this.host}:${this.port}'
+    }
+
+import config from ./config
+
+
+axios.get("${config.serverUrl}/api/contests").then(
+    resp => {console.log(resp.data)}
+
+)
+
+import './serverRender' //triggers that
+
+server.liste(config.port, config.host, () => {
+    ..
+})
