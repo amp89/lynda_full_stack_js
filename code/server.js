@@ -17,10 +17,13 @@ server.set("views", path.join(__dirname,'views'));//COOL
 server.get("/",(req,res) => {
     res.send("hello friend");
 });
-
+/*
 server.get("/ejs",(req,res)=>{
-    res.render('index');//res.render('index',{content:'wow some content rendered right in my template! <hr> how neat!'});
+    res.render('index',{content:'wow some content rendered right in my template! <hr> how neat!'});
 });
+*/
+
+
 
 /*
 server.get("/about",(req,res) => {
@@ -41,7 +44,18 @@ server.use(express.static(public_dir));
 
 ////add api ////////////////////////////
 
-import './serverRender'
+import serverRender from './serverRender';
+
+server.get("/ejs",(req,res)=>{
+    serverRender()
+        .then(content => {
+            console.log("returning ejs with content: ",content)
+            res.render('index',{content});
+        }).catch(console.error);
+
+});
+
+
 
 server.use("/api",apiRouter);
 

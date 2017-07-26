@@ -31,12 +31,12 @@ class App extends React.Component {
 
     state = {
         pageHeader: "uhhhh headdddduuuuuuuuurrrrrrr",
-        contests: []
+        contests: this.props.initialContests
     };
 
     componentDidMount(){
         console.log("App did mount");
-        //debugger;
+
         axios.get('/api/contests').then(
             response => {
                 console.log("RESPONSE:....")
@@ -59,9 +59,8 @@ class App extends React.Component {
 
     componentWillUnmount(){
         console.log("App will unmount");
-        //debugger;
-    }
 
+    }
 
 
     render() {

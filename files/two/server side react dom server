@@ -1,0 +1,43 @@
+serverRender.js
+
+import React from 'react';
+import ReactDOMServer from 'react-dom-server' ?/serveR?
+
+
+import App from './src/components/App';
+
+import config from ./config
+import axios
+
+response callback
+
+    ReactDOMServer.renderToString(<App />); //but... this depends on state???
+
+    in index.js
+    App initialContests=[]
+    add to state object: contests:this.props.initialcontests
+
+    ReactDomServer... initialContests={respons.data.contests}
+
+
+    (put return before ReactDomServer)
+
+    const serverRender = () => all of the stuff
+
+    export default serverRender
+
+    in server, change import serverRender from......   returns a promis
+        serverRender().then(content => {
+            res.render('index', {content});
+
+        }).catch(console.error);
+
+server.js
+
+/ route to server render
+
+what now
+
+
+in App.js, debugger;
+    initload, blank, then renders
