@@ -8,7 +8,15 @@
 
 <body>
     <h1>HIII</h1>
-    <div id="root"><%- content -%></root>
+
+
+        <script>
+            window.initialData = <%- JSON.stringify(initialData) -%>
+
+        </script>
+
+        <div id="root"><%- initialMarkup -%></root>
+
 
         <script src="/bundle.js"></script>
 </body>

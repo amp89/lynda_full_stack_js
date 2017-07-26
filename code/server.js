@@ -48,10 +48,11 @@ import serverRender from './serverRender';
 
 server.get("/ejs",(req,res)=>{
     serverRender()
-        .then(content => {
-            console.log("returning ejs with content: ",content)
-            res.render('index',{content});
-        }).catch(console.error);
+        .then(
+            ({initialMarkup, initialData}) => {
+            res.render('index',{initialMarkup, initialData});
+        })
+        .catch(console.error);
 
 });
 

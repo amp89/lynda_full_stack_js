@@ -15,8 +15,9 @@ ReactDOM.render(
 console.log(data);
 
 
+
 ReactDOM.render(
-    <App headerMessage="Hello Property..jhgkjg.." initialContests={[]} />,
+    <App headerMessage="Hello Property..jhgkjg.." initialContests={window.initialData.contests} />,
     document.getElementById("root")
 );
 

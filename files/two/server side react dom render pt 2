@@ -1,0 +1,36 @@
+react inits dom with empty list, goes back to api
+
+
+on front end... currently rendered initialContests = {[]}  can't do that
+
+
+
+remove did mount code
+
+-------------yes api call solution------------------------
+in index.js, make same axios get call to api/contests.  but instead of setting state, do ReactDOM.render call, {res.data.contests} for initalContests
+
+
+remove axios import from app and put in index
+    axios.get("/api/contests").then resp => ReactDOM.render.... yup
+
+
+------------no api call solution (faster, better for seo) -----------------------
+
+
+return data intself from render
+
+        in serverRender.... return initalMarkup: ReactDOMServer....
+        initalData: response.data
+
+server.js, {initaalMarkup,InitialData} => to ejs. //destructure {} because comes from an object
+.ejs file,
+<script>
+ window.initalData = <%- JSON.stringify(initalData) -%> //global variable
+<s/cript>
+<%- initialMarkup -%>
+
+
+now, in index.js
+
+ReactDOM.render(<App initalContests={window.data.contests} >);
