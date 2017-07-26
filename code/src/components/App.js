@@ -39,6 +39,7 @@ class App extends React.Component {
         //debugger;
         axios.get('/api/contests').then(
             response => {
+                console.log("RESPONSE:....")
                 console.log(response.data.contests);
                 this.setState({
                     contests:response.data.contests
@@ -46,7 +47,7 @@ class App extends React.Component {
             }
 
 
-        ).error(console.error(data))
+        ).catch(console.error);
 
 
         /*
