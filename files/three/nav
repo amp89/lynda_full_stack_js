@@ -1,0 +1,48 @@
+html5 history api.... you can use a lib to do stuff for browsers that don't support it...
+
+
+reactrouter is good for complicated stuff
+
+
+////////////////////////
+in app js
+
+const pushState = (obj,url) =>  window.history.pushState(obj, '', url);
+
+lets make it go ..../contest/<id>
+
+
+
+define on app.js  fetchContest = (contestId) => {
+    pushState(
+        { currentContestId: contestId},
+        `/contest/${contestId}`
+
+            )
+
+        };
+
+
+on app render, in contestList
+
+    pass
+    onContestClick = {this.fetchContest}
+
+//////////inc ContestList
+
+proptype
+
+onContestClick: React.PropTypes.func.isRequired,
+
+
+
+onClick = {onContestClick} //destructure in argument thing as well
+
+
+/////////in ContestRpeview
+
+onClick = this.handleClick
+
+    in handleClick this.props.onClick(this.props.id);
+
+    in propTypes, React.PropTypes.number.isRequired
