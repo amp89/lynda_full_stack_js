@@ -6,13 +6,13 @@ const ContestList = ({contests,onContestClick}) => (
 
 
             <div className = "ContestList">
-                {contests.map(contest => <ContestPreview key={contest.id} onClick={onContestClick} {...contest} />)}
+                {Object.keys(contests).map(contestId => <ContestPreview key={contestId} onClick={onContestClick} {...contests[contestId]} />)}
             </div>
 );
 
 
 ContestList.propTypes = {
-    contests: React.PropTypes.array,
+    contests: React.PropTypes.object,
     onContestClick: React.PropTypes.func.isRequired,
 };
 

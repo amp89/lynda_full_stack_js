@@ -8,9 +8,14 @@ router.get("/",(req,res) => {
 
 });
 
+const contests = data.contests.reduce((obj,contest) => {
+    obj[contest.id] = contest;
+    return obj;
+},{});
+
 
 router.get("/contests",(req,res)=>{
-    res.send({contests:data.contests});
+    res.send({contests:contests});
 });
 
 

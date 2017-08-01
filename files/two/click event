@@ -1,0 +1,63 @@
+make contest list component
+
+import React from 'react';
+
+import ContestPreview from './ContestPreview'
+
+const   ContestList  ({contests}) => (
+    <div className="ContestList">
+
+        {contests.map(constest => <ContestPreview kye={contest.id} {laksjdfalksjdf;alsdj /> )}
+    </div>
+)
+    ContestList.propTypes = {
+        contests: React.PropTypes.array
+    };
+
+
+
+export default ContestList;
+
+////////////////////////////////////////
+in app.js
+
+import ContestList from './ContestList'
+
+
+
+in App render
+
+    <ContestLIst contests = {this.state.contests}>
+
+
+////////////////////////////////
+in "ContestPReview"
+
+    onClick = {....} //don't put it here.... stateless function.... so lets put this into a class !!!
+
+
+class ContestPreview extends Component {
+
+    handleClick = () => {
+        console.log(this.props.contestName)
+    };
+
+    render () {
+        return (
+            <div className="ContestPreview" onClick={this.handleClick}>
+            </div>
+                .... the rest
+
+        )
+
+    }
+
+
+}
+
+
+
+CibtestPreview.proptypes ={
+    categoryName: React.PropTypes.string.isRequired,
+    contestName: React.PropTypes.string.isRequired,
+    }

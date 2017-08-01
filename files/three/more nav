@@ -1,0 +1,68 @@
+contest is an array rn
+
+change to object
+
+
+index.js...... res.send({
+
+    contests: data.contests.reduce( (obj, contest) => {
+        obj[contest.id] = contest;
+        return obj;
+
+    }, {})
+
+})
+
+
+//best way to do it
+
+const contest - data.......
+
+use contests:contests in res.send
+
+
+ContestList.....
+        {Object.keys(contests).map....... change .id to contestId..... {...contests[contestsId]}}
+        proptype object
+
+////this.state.contests[contestId].....  LETS GO TO APPJS
+
+this.setState({
+    pageHeader: this.state.contests[contestId].contestName,
+    currentContestId: contestId
+});
+
+
+render app return...
+
+currentContent(){
+    if(this.state.currentContestId)
+        return <Contest {...this.state.contests[this.state.currentContestId]}
+    else
+        return ContestList
+}
+
+<ContestList...   ========>>>>>>>>>>  {this.currentContent()}
+
+///////////make a new contest.js file
+
+import React, {Component, PropTypes} from 'react'
+class Contest extends Componenet{
+    render () {
+        return (
+            <div className="Contest">
+                {this.props.id}
+            </div>
+        );
+    }
+}
+
+Contest.propTypes = {
+    id: PropTypes.number.isRequired
+};
+
+
+/////////////appjs import Contest
+
+
+#
