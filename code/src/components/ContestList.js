@@ -5,7 +5,7 @@ import ContestPreview from './ContestPreview'
 const ContestList = ({contests}) => (
 
 
-            <div className = "ContestList" onClick={() => (console.log('clicky click'))}>
+            <div className = "ContestList" >
                 {contests.map(contest => <ContestPreview key={contest.id} {...contest} />)}
             </div>
 );
