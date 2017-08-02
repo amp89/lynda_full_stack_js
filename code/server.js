@@ -14,6 +14,11 @@ import config from './config';
 server.set('view engine','ejs');
 server.set("views", path.join(__dirname,'views'));//COOL
 
+
+
+
+
+
 server.get("/",(req,res) => {
     res.send("hello friend");
 });
@@ -46,8 +51,8 @@ server.use(express.static(public_dir));
 
 import serverRender from './serverRender';
 
-server.get("/ejs",(req,res)=>{
-    serverRender()
+server.get(["/ejs",'/contest/:contestId'],(req,res)=>{
+    serverRender(req.params.contestId)
         .then(
             ({initialMarkup, initialData}) => {
             res.render('index',{initialMarkup, initialData});
