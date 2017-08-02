@@ -88,6 +88,20 @@ class App extends React.Component {
                 }
             })
         });
+        fetchContestList = () => {
+            pushState(
+                {currentContestId: null},
+                '/ejs/'
+            )
+        }
+        api.fetchContestList().then(contests => {
+            this.setState({
+                currentContestId:null,
+                contests
+
+            });
+        });
+
         /*
         this.setState({
             pageHeader: this.state.contests[contestId].contestName,
@@ -96,6 +110,8 @@ class App extends React.Component {
         */
 
     };
+
+
 
     pageHeader() {
         if(this.state.currentContestId){
@@ -111,7 +127,10 @@ class App extends React.Component {
 
     currentContent() {
     if (this.state.currentContestId) {
-      return <Contest {...this.currentContest()} />;
+      return <Contest
+                contestListClick={this.fetchContestList}
+                {...this.currentContest()}
+                />;
     }
 
     return <ContestList
