@@ -32,6 +32,10 @@ App.proptypes = {
 
 const pushState = (obj, url) => window.history.pushState(obj,"",url);
 
+const onPopState = handler => {
+        window.onpopstate = handler;
+};
+
 class App extends React.Component {
 
 
@@ -43,6 +47,13 @@ class App extends React.Component {
 
 
     componentDidMount(){
+
+        onPopState((event) => {
+            this.setState({
+                currentContestId: (event.state || {}).currentContestId
+            });
+        });
+
         console.log("App did mount");
 
         axios.get('/api/contests').then(
@@ -68,6 +79,7 @@ class App extends React.Component {
 
     componentWillUnmount(){
         console.log("App will unmount");
+        onPopState(null): //deregister pop state
 
     }
 
