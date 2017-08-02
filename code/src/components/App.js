@@ -10,6 +10,7 @@ import data from '../testData.json';
 
 import axios from 'axios';
 
+import * as api from '../api';
 /*
 const App = (props) => {
 
@@ -75,24 +76,36 @@ class App extends React.Component {
             {currentContestId: contestId},
             `/contest/${contestId}`
         );
-
+        api.fetchContest(contestId).then(contest => {
+            this.setState({
+                pageHeader: contest.contestName,
+                currentContestId: contest.id,
+                contest: {
+                    ...this.state.contests,
+                    [contest.id]: contest
+                }
+            })
+        });
+        /*
         this.setState({
             pageHeader: this.state.contests[contestId].contestName,
             currentContestId:contestId,
         });
+        */
 
     };
 
-
-
-    currentContent(){
-        if(this.state.currentContestId){
-            return <Contest {...this.state.contests[this.state.currentContestId]} />;
-        }else{
-
-            return <ContestList onContestClick={this.fetchContest} contests={this.state.contests} />;
-        }
+    currentContent() {
+    if (this.state.currentContestId) {
+      return <Contest {...this.state.contests[this.state.currentContestId]} />;
     }
+
+    return <ContestList
+            onContestClick={this.fetchContest}
+            contests={this.state.contests} />;
+  }
+
+
 
     render() {
         return (

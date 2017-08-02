@@ -1,0 +1,48 @@
+get from api
+
+
+api/contests/2
+
+api/index.js
+    '/contests/:contestId', .....
+    let contest = contests[req.params.contestId];
+
+    contests.description = 'stuff'
+
+    res.send(contests)
+
+export default router;
+
+
+//////////////////src api/js
+
+api logic here
+
+import axios from 'axios';
+
+const fetchContest = contestId => {
+    return axios.get(`/api/contests/${contestId}`).then(resp => resp.data );
+}
+
+
+////////app.js
+
+    import * from '../api'
+
+    api.fetchContest(contestId).then(contest => {
+        this.setState({
+            pageHeader: contest.contestsName,
+            currentContestId: contest.id,
+            contests: {
+                ...this.state.contests,
+                [contest.id]: contest <<<< new from server with description
+            }
+        });
+
+    });
+
+////////Contest.js
+        <div className....
+            {this.props.description
+
+            proptypes description string isRequired
