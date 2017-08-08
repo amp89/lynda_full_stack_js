@@ -40,7 +40,7 @@ class App extends React.Component {
 
 
     static propTypes = {
-            initalData: React.PropTypes.object.isRequired
+            initalData: React.PropTypes.object
     };
 
     state = this.props.initialData;
@@ -58,7 +58,7 @@ class App extends React.Component {
 
         axios.get('/api/contests').then(
             response => {
-                console.log("RESPONSE:....")
+                console.log("RESPONSE:....");
                 console.log(response.data.contests);
                 this.setState({
                     contests:response.data.contests
@@ -79,7 +79,7 @@ class App extends React.Component {
 
     componentWillUnmount(){
         console.log("App will unmount");
-        onPopState(null): //deregister pop state
+        onPopState(null);//deregister pop state
 
     }
 

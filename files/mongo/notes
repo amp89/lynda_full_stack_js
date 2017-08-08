@@ -1,0 +1,50 @@
+install mongodb.... mongodb.com, or use homebrew
+
+curl -O https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.5.10.tgz
+tar -zxvf mongodb-osx-x86_64-3.5.10.tgz
+
+
+https://docs.mongodb.com/master/tutorial/install-mongodb-on-os-x/?_ga=2.111188676.1595522367.1501646274-2064693570.1501646274
+
+
+loadTestData.js, v7.1-begin jscomplete github
+
+package.json, already installed
+
+
+babel-node load test data
+
+
+take out crap in api
+
+import {MongoClient} from 'mongodb';
+import assert from 'assert';
+import config from '../config';
+
+let mdb;
+
+MongoClient.connect(config.mongodbUri, (err, db) => { assert.equal(null,err);
+    nbd = db;
+ })
+
+/////////////////////////////////////////docs on github/////////////////////////////////////////////
+
+ get /contests
+
+    let contests = {};
+    mdb.collection("contests").find({}).project({id:1,categoryName:1,contestName:1}).each(
+        (err,contest) => {
+            if(!contest){
+                res.send({ contests });
+                return;
+            }
+            contests[contest.id] = contest;
+        }
+    );
+
+other api
+
+    mdb.collection("contests").findOne({id: Number(req.params.contestId)}).then(
+        contest => res.send(contest)).catch(console.error);
+
+    )
